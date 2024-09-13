@@ -6,7 +6,7 @@ export const IncompleteTodos = (props) => {
       <ul>
         {todos.map((todo, index) => (
           // 仮想domが判別するための一意のkeyを設定
-          <li key={todo}>
+          <li key={todo.id}>
             <div className="list-row">
               <p className="todo-item">{todo}</p>
               <button onClick={() => onClickComplete(index)}>完了</button>
