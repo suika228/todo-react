@@ -36,7 +36,7 @@ export const Todo = () => {
 
   const onClickBack = (index) => {
     const newCompleteTodos = [...completeTodos];
-    newCompleteTodos.splice(index);
+    newCompleteTodos.splice(index, 1);
     const newIncompleteTodos = [...incompleteTodos, completeTodos[index]];
 
     setCompleteTodos(newCompleteTodos);
@@ -47,6 +47,7 @@ export const Todo = () => {
     <>
       <InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd} />
 
+      {incompleteTodos.length >= 5 && <p style={{ color: 'red' }}>消化してくだしあ</p>}
       <IncompleteTodos
         todos={incompleteTodos}
         onClickComplete={onClickComplete}
