@@ -45,7 +45,12 @@ export const Todo = () => {
 
   return (
     <>
-      <InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd} />
+      <InputTodo
+        todoText={todoText}
+        onChangeTodoText={onChangeTodoText}
+        onClickAdd={onClickAdd}
+        isGreaterThanFive={incompleteTodos.length >= 5}
+      />
 
       {incompleteTodos.length >= 5 && <p style={{ color: 'red' }}>消化してくだしあ</p>}
       <IncompleteTodos
